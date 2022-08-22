@@ -1,18 +1,30 @@
-import React from "react";
-import { Link } from "@inertiajs/inertia-react";
-import Routing from "fos-router";
+import React from 'react';
+import { Link, usePage } from '@inertiajs/inertia-react';
+import Routing from 'fos-router';
 
 const Layout = ({ children }) => {
+  const { component } = usePage();
+
   return (
     <>
       <header>
         <nav>
           <ul>
             <li>
-              <Link href={Routing.generate("app_home")}>Home</Link>
+              <Link
+                href={Routing.generate('app_home')}
+                className={component === 'Home' ? 'active' : ''}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href={Routing.generate("app_about")}>About Us</Link>
+              <Link
+                href={Routing.generate('app_about')}
+                className={component === 'About' ? 'active' : ''}
+              >
+                About Us
+              </Link>
             </li>
           </ul>
         </nav>
@@ -22,7 +34,7 @@ const Layout = ({ children }) => {
 
       <footer>
         <p>
-          Built with &hearts; by the folks at{" "}
+          Built with &hearts; by the folks at{' '}
           <a href="https://parlonscode.com">Parlons Code</a>
         </p>
       </footer>
