@@ -9,13 +9,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PagesController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/', name: 'app_home', options: ['expose' => true])]
     public function home(InertiaInterface $inertia): Response
     {
-        return $inertia->render('Home', ['name' => 'World']);
+        return $inertia->render('Home', ['name' => 'Honoré', 'birthYear' => 2002]);
     }
 
-    #[Route('/about-us', name: 'app_about')]
+    #[Route('/about-us', name: 'app_about', options: ['expose' => true])]
     public function about(InertiaInterface $inertia): Response
     {
         return $inertia->render('About');

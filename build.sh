@@ -46,6 +46,8 @@ function inertia.symfony.react {
     cat ./generator/stubs/Home.js > assets/js/pages/Home.js
     cat ./generator/stubs/About.js > assets/js/pages/About.js
     npm install --legacy-peer-deps
+    composer require friendsofsymfony/jsrouting-bundle
+    symfony console assets:install --symlink public
     npm run dev
     rm -r stubs
 

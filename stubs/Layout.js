@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
+import Routing from "fos-router";
 
 const Layout = ({ children }) => {
   return (
@@ -8,10 +9,10 @@ const Layout = ({ children }) => {
         <nav>
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href={Routing.generate("app_home")}>Home</Link>
             </li>
             <li>
-              <Link href="/about-us">About Us</Link>
+              <Link href={Routing.generate("app_about")}>About Us</Link>
             </li>
           </ul>
         </nav>
