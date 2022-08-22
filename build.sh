@@ -37,6 +37,9 @@ function inertia.symfony.react {
     symfony console make:controller pages --no-template
     cat ./generator/stubs/PagesController.php > src/Controller/PagesController.php
     cat ./generator/stubs/package.json > package.json
+    mkdir assets/js/components
+    touch assets/js/components/Layout.js
+    cat ./generator/stubs/Layout.js > assets/js/components/Layout.js
     mkdir assets/js/pages
     touch assets/js/pages/Home.js
     cat ./generator/stubs/Home.js > assets/js/pages/Home.js

@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "@inertiajs/inertia-react";
+import { Head } from "@inertiajs/inertia-react";
 
 export default function AboutPage() {
   return (
     <>
+      <Head title="About Us" />
+
       <h1>About Us</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      </p>
-      <Link href="/">Go back to the homepage</Link>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </>
   );
 }
