@@ -6,9 +6,7 @@ export default function HomePage({ name }) {
     <>
       <Head title="Home" />
 
-      <h1>
-        Hello, {name}!
-      </h1>
+      <h1>Hello, {name}!</h1>
     </>
   );
 }
