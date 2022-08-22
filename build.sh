@@ -12,7 +12,7 @@ function inertia.symfony.react {
 
     node --version > /dev/null 2>&1
 
-    # Ensure that the npm is available...
+    # Ensure that npm is available...
     if [ $? -ne 0 ]; then
         echo "npm must be installed!"
 
@@ -24,20 +24,20 @@ function inertia.symfony.react {
     composer require encore
     composer require rompetomp/inertia-bundle
     mv templates/base.html.twig templates/app.html.twig
-    cat ../stubs/app.html.twig > templates/app.html.twig
-    cat ../stubs/webpack.config.js > webpack.config.js
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/app.html.twig > templates/app.html.twig
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
-    cat ../stubs/app.js > assets/js/app.js
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
-    cat ../stubs/PagesController.php > src/Controller/PagesController.php
-    cat ../stubs/package.json > package.json
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/PagesController.php > src/Controller/PagesController.php
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/package.json > package.json
     mkdir assets/js/pages
     touch assets/js/pages/Home.js
-    cat ../stubs/Home.js > assets/js/pages/Home.js
-    cat ../stubs/About.js > assets/js/pages/About.js
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/Home.js > assets/js/pages/Home.js
+    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/About.js > assets/js/pages/About.js
     npm install --legacy-peer-deps
     npm run dev
 
