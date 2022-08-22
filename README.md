@@ -2,7 +2,7 @@
 
 A quick way to setup a new Symfony Project with Inertia.js and React installed.
 
-> **Warning**
+> **Note**
 > The Symfony Client and npm must be available on your system for the script to work properly.
 
 ```shell
