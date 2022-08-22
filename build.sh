@@ -10,7 +10,7 @@ function inertia.symfony.react {
         exit 1
     fi
 
-    node --version > /dev/null 2>&1
+    npm --version > /dev/null 2>&1
 
     # Ensure that npm is available...
     if [ $? -ne 0 ]; then
