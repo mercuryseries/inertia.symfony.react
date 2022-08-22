@@ -29,33 +29,33 @@ function inertia.symfony.react {
     composer require friendsofsymfony/jsrouting-bundle
     symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
-    git clone https://github.com/mercuryseries/inertia.symfony.react.git generator
+    git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
-    cat ./generator/stubs/pint.json > pint.json
-    cat ./generator/stubs/.prettierignore > .prettierignore
-    cat ./generator/stubs/prettier.config.js > prettier.config.js
+    cat ./stubs/stubs/pint.json > pint.json
+    cat ./stubs/stubs/.prettierignore > .prettierignore
+    cat ./stubs/stubs/prettier.config.js > prettier.config.js
     mkdir scripts
-    cat ./generator/stubs/format.sh > scripts/format.sh
+    cat ./stubs/stubs/format.sh > scripts/format.sh
     chmod +x scripts/format.sh
-    cat ./generator/stubs/app.html.twig > templates/app.html.twig
-    cat ./generator/stubs/webpack.config.js > webpack.config.js
+    cat ./stubs/stubs/app.html.twig > templates/app.html.twig
+    cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
-    cat ./generator/stubs/app.css > assets/css/app.css
+    cat ./stubs/stubs/app.css > assets/css/app.css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
-    cat ./generator/stubs/app.js > assets/js/app.js
+    cat ./stubs/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
-    cat ./generator/stubs/PagesController.php > src/Controller/PagesController.php
-    cat ./generator/stubs/package.json > package.json
+    cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
+    cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/components
     touch assets/js/components/Layout.js
-    cat ./generator/stubs/Layout.js > assets/js/components/Layout.js
+    cat ./stubs/stubs/Layout.js > assets/js/components/Layout.js
     mkdir assets/js/pages
     touch assets/js/pages/Home.js
-    cat ./generator/stubs/Home.js > assets/js/pages/Home.js
-    cat ./generator/stubs/About.js > assets/js/pages/About.js
-    rm -r generator
+    cat ./stubs/stubs/Home.js > assets/js/pages/Home.js
+    cat ./stubs/stubs/About.js > assets/js/pages/About.js
+    rm -r stubs
     npm install --legacy-peer-deps
     bash scripts/format.sh
     npm run dev
