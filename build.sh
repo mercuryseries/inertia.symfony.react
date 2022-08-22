@@ -19,8 +19,10 @@ function inertia.symfony.react {
         exit 1
     fi
 
-    symfony new $1 --webapp
-    cd $1
+    PROJECT_NAME=$1
+
+    symfony new $PROJECT_NAME --webapp
+    cd $PROJECT_NAME
     composer require encore
     composer require rompetomp/inertia-bundle
     mv templates/base.html.twig templates/app.html.twig
@@ -44,7 +46,7 @@ function inertia.symfony.react {
     WHITE='\033[1;37m'
     NC='\033[0m'
 
-    echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $1 && symfony serve -d && symfony open:local && npm run watch"
+    echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $PROJECT_NAME && symfony serve -d && symfony open:local && npm run watch"
 }
 
 args=("$@")
