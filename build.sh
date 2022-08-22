@@ -26,22 +26,24 @@ function inertia.symfony.react {
     composer require encore
     composer require rompetomp/inertia-bundle
     mv templates/base.html.twig templates/app.html.twig
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/app.html.twig > templates/app.html.twig
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/webpack.config.js > webpack.config.js
+    git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
+    cat ./stubs/stubs/app.html.twig > templates/app.html.twig
+    cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/app.js > assets/js/app.js
+    cat ./stubs/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/PagesController.php > src/Controller/PagesController.php
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/package.json > package.json
+    cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
+    cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/pages
     touch assets/js/pages/Home.js
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/Home.js > assets/js/pages/Home.js
-    cat https://raw.githubusercontent.com/mercuryseries/inertia.symfony.react/main/stubs/About.js > assets/js/pages/About.js
+    cat ./stubs/stubs/Home.js > assets/js/pages/Home.js
+    cat ./stubs/stubs/About.js > assets/js/pages/About.js
     npm install --legacy-peer-deps
     npm run dev
+    rm -r stubs
 
     WHITE='\033[1;37m'
     NC='\033[0m'
