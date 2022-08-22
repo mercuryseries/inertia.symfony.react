@@ -26,21 +26,21 @@ function inertia.symfony.react {
     composer require encore
     composer require rompetomp/inertia-bundle
     mv templates/base.html.twig templates/app.html.twig
-    git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
-    cat ./stubs/stubs/app.html.twig > templates/app.html.twig
-    cat ./stubs/stubs/webpack.config.js > webpack.config.js
+    git clone https://github.com/mercuryseries/inertia.symfony.react.git generator
+    cat ./generator/stubs/app.html.twig > templates/app.html.twig
+    cat ./generator/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
-    cat ./stubs/stubs/app.js > assets/js/app.js
+    cat ./generator/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
-    cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
-    cat ./stubs/stubs/package.json > package.json
+    cat ./generator/stubs/PagesController.php > src/Controller/PagesController.php
+    cat ./generator/stubs/package.json > package.json
     mkdir assets/js/pages
     touch assets/js/pages/Home.js
-    cat ./stubs/stubs/Home.js > assets/js/pages/Home.js
-    cat ./stubs/stubs/About.js > assets/js/pages/About.js
+    cat ./generator/stubs/Home.js > assets/js/pages/Home.js
+    cat ./generator/stubs/About.js > assets/js/pages/About.js
     npm install --legacy-peer-deps
     npm run dev
     rm -r stubs
