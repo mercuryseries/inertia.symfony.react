@@ -24,8 +24,10 @@ function inertia.symfony.react {
     symfony new $PROJECT_NAME --webapp
     cd $PROJECT_NAME
     composer require encore
+    composer config extra.symfony.allow-contrib true
     composer require rompetomp/inertia-bundle
-    composer require friendsofsymfony/jsrouting-bundle --no-interaction
+    composer require friendsofsymfony/jsrouting-bundle
+    composer config extra.symfony.allow-contrib false
     symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git generator
