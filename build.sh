@@ -32,6 +32,7 @@ function inertia.symfony.react {
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
+    cat ./generator/stubs/app.css > assets/css/app.css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
     cat ./generator/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
