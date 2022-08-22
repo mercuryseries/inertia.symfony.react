@@ -1,5 +1,5 @@
 config
-public
+public/build
 vendor
 var
 composer.lock

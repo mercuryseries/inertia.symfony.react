@@ -55,7 +55,7 @@ function inertia.symfony.react {
     touch assets/js/pages/Home.js
     cat ./generator/stubs/Home.js > assets/js/pages/Home.js
     cat ./generator/stubs/About.js > assets/js/pages/About.js
-    rm -r stubs
+    rm -r generator
     npm install --legacy-peer-deps
     bash scripts/format.sh
     npm run dev
