@@ -29,6 +29,13 @@ function inertia.symfony.react {
     symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git generator
+    composer require laravel/pint --dev
+    cat ./generator/stubs/pint.json > pint.json
+    cat ./generator/stubs/.prettierignore > .prettierignore
+    cat ./generator/stubs/prettier.config.js > prettier.config.js
+    mkdir scripts
+    cat ./generator/stubs/format.sh > scripts/format.sh
+    chmod +x scripts/format.sh
     cat ./generator/stubs/app.html.twig > templates/app.html.twig
     cat ./generator/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
@@ -48,6 +55,7 @@ function inertia.symfony.react {
     cat ./generator/stubs/Home.js > assets/js/pages/Home.js
     cat ./generator/stubs/About.js > assets/js/pages/About.js
     npm install --legacy-peer-deps
+    bash scripts/format.sh
     npm run dev
     rm -r stubs
 
