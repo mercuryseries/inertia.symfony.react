@@ -25,7 +25,7 @@ function inertia.symfony.react {
     cd $PROJECT_NAME
     composer require encore
     composer require rompetomp/inertia-bundle
-    composer require friendsofsymfony/jsrouting-bundle
+    composer require friendsofsymfony/jsrouting-bundle --no-interaction
     symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git generator
@@ -54,10 +54,10 @@ function inertia.symfony.react {
     touch assets/js/pages/Home.js
     cat ./generator/stubs/Home.js > assets/js/pages/Home.js
     cat ./generator/stubs/About.js > assets/js/pages/About.js
+    rm -r stubs
     npm install --legacy-peer-deps
     bash scripts/format.sh
     npm run dev
-    rm -r stubs
 
     WHITE='\033[1;37m'
     NC='\033[0m'
