@@ -1,5 +1,6 @@
 config
 public/build
+public/bundles
 vendor
 var
 composer.lock
