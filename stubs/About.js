@@ -1,5 +1,5 @@
-import React from "react";
-import { Head } from "@inertiajs/inertia-react";
+import React from 'react';
+import { Head } from '@inertiajs/inertia-react';
 
 export default function AboutPage() {
   return (

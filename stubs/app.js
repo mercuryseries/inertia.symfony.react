@@ -1,13 +1,13 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { createInertiaApp } from "@inertiajs/inertia-react";
-import { InertiaProgress } from "@inertiajs/progress";
-import Layout from "@/components/Layout";
-import "../css/app.css";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { createInertiaApp } from '@inertiajs/inertia-react';
+import { InertiaProgress } from '@inertiajs/progress';
+import Layout from '@/components/Layout';
+import '../css/app.css';
 
 InertiaProgress.init({ showSpinner: true });
 
-const appName = document.getElementsByTagName("title")[0]?.innerText;
+const appName = document.getElementsByTagName('title')[0]?.innerText;
 
 createInertiaApp({
   title: (title) => `${title} | ${appName}`,
