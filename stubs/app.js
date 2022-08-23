@@ -5,8 +5,6 @@ import { InertiaProgress } from '@inertiajs/progress';
 import Layout from '@/components/Layout';
 import '../css/app.css';
 
-InertiaProgress.init({ showSpinner: true });
-
 const appName = document.getElementsByTagName('title')[0]?.innerText;
 
 createInertiaApp({
@@ -20,5 +18,7 @@ createInertiaApp({
   },
   setup({ el, App, props }) {
     createRoot(el).render(<App {...props} />);
-  },
+  }
 });
+
+InertiaProgress.init({ showSpinner: true });
