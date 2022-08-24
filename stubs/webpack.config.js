@@ -48,6 +48,10 @@ Encore.addPlugin(new FosRouting())
 
   .configureBabel((config) => {
     config.plugins.push('@babel/plugin-proposal-class-properties');
+
+    if (Encore.isProduction()) {
+      config.plugins.push('transform-react-remove-prop-types');
+    }
   })
 
   // enables @babel/preset-env polyfills

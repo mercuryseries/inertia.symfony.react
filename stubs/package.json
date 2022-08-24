@@ -5,6 +5,7 @@
     "@inertiajs/inertia-react": "^0.8.0",
     "@inertiajs/progress": "^0.2.7",
     "@symfony/webpack-encore": "^3.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "core-js": "^3.23.0",
     "fos-router": "file:vendor/friendsofsymfony/jsrouting-bundle/Resources",
     "prettier": "^2.7.1",
