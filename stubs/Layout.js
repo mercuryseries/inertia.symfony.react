@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       <footer>
         <p>
           Built with &hearts; by the folks at{' '}
-          <a href="https://parlonscode.com">Parlons Code</a>
+          <a href="https://parlonscode.com">Parlons Code</a>.
         </p>
       </footer>
     </>
