@@ -49,10 +49,8 @@ function inertia.symfony.react {
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
     cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/shared
-    touch assets/js/shared/Layout.js
     cat ./stubs/stubs/Layout.js > assets/js/shared/Layout.js
     mkdir assets/js/pages
-    touch assets/js/pages/Home.js
     cat ./stubs/stubs/Home.js > assets/js/pages/Home.js
     cat ./stubs/stubs/About.js > assets/js/pages/About.js
     rm -r stubs
