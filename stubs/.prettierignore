@@ -1,6 +1,7 @@
 config
 public/build
 public/bundles
+public/build-ssr
 vendor
 var
 composer.lock
