@@ -10,6 +10,15 @@ function inertia.symfony.react {
         exit 1
     fi
 
+    git --version > /dev/null 2>&1
+
+    # Ensure that git is available...
+    if [ $? -ne 0 ]; then
+        echo "git must be installed!"
+
+        exit 1
+    fi
+
     npm --version > /dev/null 2>&1
 
     # Ensure that npm is available...
