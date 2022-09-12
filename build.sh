@@ -29,6 +29,7 @@ function inertia.symfony.react {
     composer require friendsofsymfony/jsrouting-bundle
     symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
+    php -r "file_put_contents('templates/app.html.twig', str_replace('Hello App', '$PROJECT_NAME', file_get_contents('templates/app.html.twig')));"
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
