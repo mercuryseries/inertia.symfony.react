@@ -60,9 +60,9 @@ function inertia.symfony.react {
     npm install --legacy-peer-deps
     bash scripts/format.sh
     npm run dev
+    composer config --json extra.symfony.allow-contrib false
     git add -A
     git commit -m "Setup Inertia"
-    composer config --json extra.symfony.allow-contrib false
 
     WHITE='\033[1;37m'
     NC='\033[0m'
