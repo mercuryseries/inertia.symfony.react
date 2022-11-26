@@ -36,7 +36,6 @@ function inertia.symfony.react {
     composer require encore
     composer require rompetomp/inertia-bundle
     composer require friendsofsymfony/jsrouting-bundle
-    symfony console assets:install --symlink public
     mv templates/base.html.twig templates/app.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev

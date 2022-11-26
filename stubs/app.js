@@ -1,13 +1,16 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createInertiaApp } from '@inertiajs/inertia-react';
-import { InertiaProgress } from '@inertiajs/progress';
+import { createInertiaApp } from '@inertiajs/react';
 import Layout from '@/shared/Layout';
 import '../css/app.css';
 
 const appName = document.getElementsByTagName('title')[0]?.innerText;
 
 createInertiaApp({
+  progress: {
+    color: '#eb6565',
+    showSpinner: true
+  },
   title: (title) => `${title} | ${appName}`,
   resolve: (name) => {
     const page = require(`./pages/${name}`).default;
@@ -20,5 +23,3 @@ createInertiaApp({
     createRoot(el).render(<App {...props} />);
   }
 });
-
-InertiaProgress.init({ showSpinner: true });
