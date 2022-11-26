@@ -8,7 +8,6 @@ const appName = document.getElementsByTagName('title')[0]?.innerText;
 
 createInertiaApp({
   progress: {
-    color: '#eb6565',
     showSpinner: true
   },
   title: (title) => `${title} | ${appName}`,
