@@ -45,14 +45,14 @@ function inertia.symfony.react {
     mkdir scripts
     cat ./stubs/stubs/format.sh > scripts/format.sh
     chmod +x scripts/format.sh
-    cat ./stubs/stubs/app.html.twig > templates/app.html.twig
+    cat ./stubs/stubs/app2.html.twig > templates/app.html.twig
     php -r "file_put_contents('templates/app.html.twig', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('templates/app.html.twig')));"
     cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
-    cat ./stubs/stubs/app.js > assets/js/app.js
+    cat ./stubs/stubs/app2.js > assets/js/app.js
     cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/shared
     touch assets/js/shared/Layout.js
