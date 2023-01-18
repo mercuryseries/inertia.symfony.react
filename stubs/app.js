@@ -20,5 +20,5 @@ createInertiaApp({
   },
   setup({ el, App, props }) {
     createRoot(el).render(<App {...props} />);
-  }
+  },
 });
