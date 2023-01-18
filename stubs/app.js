@@ -1,10 +1,10 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { createInertiaApp } from '@inertiajs/react';
-import Layout from '@/shared/Layout';
-import '../css/app.css';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { createInertiaApp } from "@inertiajs/react";
+import Layout from "@/shared/Layout";
+import "../css/app.css";
 
-const appName = document.getElementsByTagName('title')[0]?.innerText;
+const appName = document.getElementsByTagName("title")[0]?.innerText;
 
 createInertiaApp({
   progress: {
