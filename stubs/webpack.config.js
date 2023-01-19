@@ -18,7 +18,7 @@ Encore.addPlugin(new FosRouting())
 
   .addAliases({
     "@": path.resolve("assets/js"),
-    "@img": path.resolve("assets/img")
+    "@img": path.resolve("assets/img"),
   })
 
   /*
