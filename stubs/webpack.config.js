@@ -17,7 +17,8 @@ Encore.addPlugin(new FosRouting())
   //.setManifestKeyPrefix("build/")
 
   .addAliases({
-    "@": path.resolve("assets/js")
+    "@": path.resolve("assets/js"),
+    "@img": path.resolve("assets/img")
   })
 
   /*
