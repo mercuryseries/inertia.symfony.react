@@ -48,8 +48,8 @@ function inertia.symfony.react {
     cat ./stubs/stubs/app2.html.twig > templates/app.html.twig
     php -r "file_put_contents('templates/app.html.twig', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('templates/app.html.twig')));"
     cat ./stubs/stubs/webpack.config.js > webpack.config.js
-    mkdir assets/img
-    cat ./stubs/stubs/.gitignore > assets/img/.gitignore
+    mkdir assets/images
+    echo '' > assets/images/.gitignore
     mkdir assets/js
     mv assets/app.js assets/js/app.js
     mv assets/styles assets/css
