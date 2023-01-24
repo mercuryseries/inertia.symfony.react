@@ -52,7 +52,6 @@ function inertia.symfony.react {
     echo '' > assets/img/.gitignore
     mkdir assets/js
     mv assets/app.js assets/js/app.js
-    mv assets/styles assets/css
     rm -r assets/{controllers,controllers.json,bootstrap.js}
     cat ./stubs/stubs/app2.js > assets/js/app.js
     cat ./stubs/stubs/package.json > package.json

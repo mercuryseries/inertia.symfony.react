@@ -13,13 +13,13 @@ class PagesController extends AbstractController
     {
     }
 
-    #[Route('/', name: 'app_home', options: ['expose' => true])]
+    #[Route('/', name: 'app_home', methods: ['GET'], options: ['expose' => true])]
     public function home(): Response
     {
         return $this->inertia->render('Home', ['name' => 'John Doe']);
     }
 
-    #[Route('/about-us', name: 'app_about', options: ['expose' => true])]
+    #[Route('/about-us', name: 'app_about', methods: ['GET'], options: ['expose' => true])]
     public function about(): Response
     {
         return $this->inertia->render('About');
