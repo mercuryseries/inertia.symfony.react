@@ -30,10 +30,10 @@ function inertia.symfony.react {
 
     PROJECT_NAME=$1
 
-    symfony new $PROJECT_NAME --webapp
+    symfony new $PROJECT_NAME
     cd $PROJECT_NAME
     composer config --json extra.symfony.allow-contrib true
-    composer require encore
+    composer require twig encore serializer debug
     composer require rompetomp/inertia-bundle
     composer require friendsofsymfony/jsrouting-bundle
     mv templates/base.html.twig templates/app.html.twig
