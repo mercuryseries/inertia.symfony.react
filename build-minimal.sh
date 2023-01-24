@@ -33,7 +33,7 @@ function inertia.symfony.react {
     symfony new $PROJECT_NAME
     cd $PROJECT_NAME
     composer config --json extra.symfony.allow-contrib true
-    composer require twig encore serializer debug
+    composer require twig-bundle encore serializer debug
     composer require rompetomp/inertia-bundle
     composer require friendsofsymfony/jsrouting-bundle
     mv templates/base.html.twig templates/app.html.twig
