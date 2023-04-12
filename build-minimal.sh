@@ -55,9 +55,9 @@ function inertia.symfony.react {
     rm -r assets/{controllers,controllers.json,bootstrap.js}
     cat ./stubs/stubs/app2.js > assets/js/app.js
     cat ./stubs/stubs/package.json > package.json
-    mkdir assets/js/shared
-    touch assets/js/shared/Layout.js
-    cat ./stubs/stubs/Layout2.js > assets/js/shared/Layout.js
+    mkdir assets/js/components
+    touch assets/js/components/Layout.js
+    cat ./stubs/stubs/Layout2.js > assets/js/components/Layout.js
     mkdir assets/js/pages
     rm -r stubs
     npm install --legacy-peer-deps
