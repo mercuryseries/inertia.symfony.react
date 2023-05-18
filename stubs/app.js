@@ -10,7 +10,7 @@ createInertiaApp({
   progress: {
     showSpinner: true
   },
-  title: (title) => title ? `${title} | ${appName}` : appName,
+  title: (title) => (title ? `${title} | ${appName}` : appName),
   resolve: (name) => {
     const page = require(`./pages/${name}`).default;
     if (page.layout === undefined) {
