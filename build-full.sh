@@ -47,7 +47,6 @@ function inertia.symfony.react {
     cat ./stubs/stubs/format.sh > scripts/format.sh
     chmod +x scripts/format.sh
     cat ./stubs/stubs/app.html.twig > templates/app.html.twig
-    php -r "file_put_contents('templates/app.html.twig', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('templates/app.html.twig')));"
     cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/img
     echo '' > assets/img/.gitignore
@@ -55,6 +54,7 @@ function inertia.symfony.react {
     cat ./stubs/stubs/app.css > assets/styles/app.css
     rm -r assets/{app.js,bootstrap.js,controllers,controllers.json}
     cat ./stubs/stubs/app.js > assets/js/app.js
+    php -r "file_put_contents('assets/js/app.js', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.js')));"
     symfony console make:controller pages --no-template
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
     cat ./stubs/stubs/package.json > package.json
