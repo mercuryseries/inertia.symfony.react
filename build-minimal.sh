@@ -46,13 +46,11 @@ function inertia.symfony.react {
     cat ./stubs/stubs/format.sh > scripts/format.sh
     chmod +x scripts/format.sh
     cat ./stubs/stubs/app2.html.twig > templates/app.html.twig
-    php -r "file_put_contents('templates/app.html.twig', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('templates/app.html.twig')));"
     cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/img
     echo '' > assets/img/.gitignore
     mkdir assets/js
-    mv assets/app.js assets/js/app.js
-    rm -r assets/{controllers,controllers.json,bootstrap.js}
+    rm -r assets/{app.js,bootstrap.js,controllers,controllers.json}
     cat ./stubs/stubs/app2.js > assets/js/app.js
     cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/components

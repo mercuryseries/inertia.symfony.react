@@ -52,9 +52,8 @@ function inertia.symfony.react {
     mkdir assets/img
     echo '' > assets/img/.gitignore
     mkdir assets/js
-    mv assets/app.js assets/js/app.js
     cat ./stubs/stubs/app.css > assets/styles/app.css
-    rm -r assets/{controllers,controllers.json,bootstrap.js}
+    rm -r assets/{app.js,bootstrap.js,controllers,controllers.json}
     cat ./stubs/stubs/app.js > assets/js/app.js
     symfony console make:controller pages --no-template
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php

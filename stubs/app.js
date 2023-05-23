@@ -4,7 +4,7 @@ import { createInertiaApp } from "@inertiajs/react";
 import Layout from "./components/Layout";
 import "../styles/app.css";
 
-const appName = document.getElementsByTagName("title")[0]?.innerText;
+const appName = "[TO_REPLACE]";
 
 createInertiaApp({
   progress: {
