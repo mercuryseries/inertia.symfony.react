@@ -57,6 +57,7 @@ function inertia.symfony.react {
     php -r "file_put_contents('assets/js/app.js', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.js')));"
     symfony console make:controller pages --no-template
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
+    cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/components
     touch assets/js/components/Layout.js
