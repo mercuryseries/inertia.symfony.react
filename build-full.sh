@@ -64,7 +64,7 @@ function inertia.symfony.react {
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     mkdir src/Service
-    cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
+    cat ./stubs/stubs/BundleDetector-webpack.php > src/Service/BundleDetector.php
     cat ./stubs/stubs/services-webpack.yaml > config/services.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/webpack.ssr.config.js > webpack.ssr.config.js
