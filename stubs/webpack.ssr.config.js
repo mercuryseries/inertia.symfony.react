@@ -9,7 +9,6 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 Encore.addPlugin(new FosRouting())
   .setOutputPath("public/build-ssr/")
-  .setPublicPath("/build-ssr")
   .enableReactPreset()
   .addAliases({
     "@": path.resolve("assets/js"),
