@@ -41,7 +41,8 @@ function inertia.symfony.react {
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
-    cat ./stubs/stubs/.prettierignore > .prettierignore
+    cat ./stubs/stubs/prettierignore > .prettierignore
+    cat ./stubs/stubs/gitignore > .gitignore
     cat ./stubs/stubs/prettier.config.js > prettier.config.js
     mkdir scripts
     cat ./stubs/stubs/format.sh > scripts/format.sh
@@ -60,10 +61,8 @@ function inertia.symfony.react {
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package.json > package.json
     mkdir assets/js/components
-    touch assets/js/components/Layout.js
     cat ./stubs/stubs/Layout.js > assets/js/components/Layout.js
     mkdir assets/js/pages
-    touch assets/js/pages/Home.js
     cat ./stubs/stubs/Home.js > assets/js/pages/Home.js
     cat ./stubs/stubs/About.js > assets/js/pages/About.js
     rm -r stubs

@@ -41,7 +41,8 @@ function inertia.symfony.react {
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
-    cat ./stubs/stubs/.prettierignore-vite > .prettierignore
+    cat ./stubs/stubs/prettierignore-vite > .prettierignore
+    cat ./stubs/stubs/gitignore > .gitignore
     cat ./stubs/stubs/prettier.config.js > prettier.config.js
     mkdir scripts
     cat ./stubs/stubs/format.sh > scripts/format.sh
@@ -61,23 +62,17 @@ function inertia.symfony.react {
     symfony console make:controller pages --no-template
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
     mkdir src/Command
-    # touch src/Command/StartInertiaSsrCommand.php
-    # touch src/Command/StopInertiaSsrCommand.php
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     mkdir src/Service
-    # touch src/Service/BundleDetector.php
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
     cat ./stubs/stubs/services.yaml > config/services.yaml
-    # touch config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package-vite.json > package.json
     mkdir assets/js/components
-    # touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/Layout-vite.jsx > assets/js/components/Layout.jsx
     mkdir assets/js/pages
-    # touch assets/js/pages/Home.jsx
     cat ./stubs/stubs/Home-vite.jsx > assets/js/pages/Home.jsx
     cat ./stubs/stubs/About-vite.jsx > assets/js/pages/About.jsx
     rm -r stubs
