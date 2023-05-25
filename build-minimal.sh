@@ -41,7 +41,7 @@ function inertia.symfony.react {
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
     cat ./stubs/stubs/prettierignore > .prettierignore
-    # cat ./stubs/stubs/gitignore > .gitignore
+    cat ./stubs/stubs/gitignore-webpack > .gitignore
     cat ./stubs/stubs/prettier.config.js > prettier.config.js
     mkdir scripts
     cat ./stubs/stubs/format.sh > scripts/format.sh
