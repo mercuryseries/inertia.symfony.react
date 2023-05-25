@@ -1,5 +1,6 @@
 config
 public/build
+public/build-ssr
 public/bundles
 vendor
 var

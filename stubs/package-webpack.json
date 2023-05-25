@@ -13,6 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "regenerator-runtime": "^0.13.9",
+    "rimraf": "^5.0.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-notifier": "^1.15.0"
@@ -23,6 +24,9 @@
     "dev-server": "encore dev-server",
     "dev": "encore dev",
     "watch": "encore dev --watch",
-    "build": "encore production --progress"
+    "build:client": "encore production --progress",
+    "build:server": "encore production --progress --config webpack.ssr.config.js",
+    "clean": "rimraf public/build-ssr/{entrypoints,manifest}.json public/build-ssr/ssr*.css",
+    "build": "npm run build:client && npm run build:server && npm run clean"
   }
 }

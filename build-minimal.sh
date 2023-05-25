@@ -36,28 +36,38 @@ function inertia.symfony.react {
     composer require twig-bundle encore serializer debug
     composer require rompetomp/inertia-bundle
     composer require friendsofsymfony/jsrouting-bundle
-    mv templates/base.html.twig templates/app.html.twig
+    rm templates/base.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
-    cat ./stubs/stubs/prettierignore > .prettierignore
+    cat ./stubs/stubs/prettierignore-webpack > .prettierignore
     cat ./stubs/stubs/gitignore-webpack > .gitignore
     cat ./stubs/stubs/prettier.config.js > prettier.config.js
     mkdir scripts
     cat ./stubs/stubs/format.sh > scripts/format.sh
     chmod +x scripts/format.sh
-    cat ./stubs/stubs/app.html.twig > templates/app.html.twig
+    cat ./stubs/stubs/app-webpack.html.twig > templates/app.html.twig
     cat ./stubs/stubs/webpack.config.js > webpack.config.js
     mkdir assets/img
     echo '' > assets/img/.gitignore
     mkdir assets/js
     rm -r assets/{app.js,bootstrap.js,controllers,controllers.json}
-    cat ./stubs/stubs/app.js > assets/js/app.js
+    cat ./stubs/stubs/app-webpack.js > assets/js/app.js
+    cat ./stubs/stubs/ssr-webpack.js > assets/js/ssr.js
     php -r "file_put_contents('assets/js/app.js', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.js')));"
+    php -r "file_put_contents('assets/js/ssr.js', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/ssr.js')));"
+    mkdir src/Command
+    cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
+    cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
+    mkdir src/Service
+    cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
+    cat ./stubs/stubs/services-webpack.yaml > config/services.yaml
+    cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
+    cat ./stubs/stubs/webpack.ssr.config.js > webpack.ssr.config.js
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
-    cat ./stubs/stubs/package.json > package.json
+    cat ./stubs/stubs/package-webpack.json > package.json
     mkdir assets/js/components
-    cat ./stubs/stubs/Layout2.js > assets/js/components/Layout.js
+    cat ./stubs/stubs/Layout-minimal-webpack.js > assets/js/components/Layout.js
     mkdir assets/js/pages
     rm -r stubs
     npm install --legacy-peer-deps
@@ -66,6 +76,7 @@ function inertia.symfony.react {
     composer config --json extra.symfony.allow-contrib false
     git add -A
     git commit -m "Setup Inertia"
+    symfony console cache:clear
 
     WHITE='\033[1;37m'
     NC='\033[0m'

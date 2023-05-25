@@ -37,7 +37,7 @@ function inertia.symfony.react {
     composer require rompetomp/inertia-bundle
     composer require friendsofsymfony/jsrouting-bundle
     composer require maker --dev
-    mv templates/base.html.twig templates/app.html.twig
+    rm templates/base.html.twig
     git clone https://github.com/mercuryseries/inertia.symfony.react.git stubs
     composer require laravel/pint --dev
     cat ./stubs/stubs/pint.json > pint.json
@@ -66,12 +66,12 @@ function inertia.symfony.react {
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     mkdir src/Service
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
-    cat ./stubs/stubs/services.yaml > config/services.yaml
+    cat ./stubs/stubs/services-vite.yaml > config/services.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package-vite.json > package.json
     mkdir assets/js/components
-    cat ./stubs/stubs/Layout-vite.jsx > assets/js/components/Layout.jsx
+    cat ./stubs/stubs/Layout-full-vite.jsx > assets/js/components/Layout.jsx
     mkdir assets/js/pages
     cat ./stubs/stubs/Home-vite.jsx > assets/js/pages/Home.jsx
     cat ./stubs/stubs/About-vite.jsx > assets/js/pages/About.jsx
@@ -81,6 +81,7 @@ function inertia.symfony.react {
     composer config --json extra.symfony.allow-contrib false
     git add -A
     git commit -m "Setup Inertia"
+    symfony console cache:clear
 
     WHITE='\033[1;37m'
     NC='\033[0m'
