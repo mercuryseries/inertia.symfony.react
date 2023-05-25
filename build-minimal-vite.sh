@@ -58,21 +58,20 @@ function inertia.symfony.react {
     php -r "file_put_contents('assets/js/app.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.jsx')));"
     php -r "file_put_contents('assets/js/ssr.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/ssr.jsx')));"
     mkdir src/Command
-    touch src/Command/StartInertiaSsrCommand.php
-    touch src/Command/StopInertiaSsrCommand.php
+    # touch src/Command/StartInertiaSsrCommand.php
+    # touch src/Command/StopInertiaSsrCommand.php
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     mkdir src/Service
-    touch src/Service/BundleDetector.php
+    # touch src/Service/BundleDetector.php
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
     cat ./stubs/stubs/services.yaml > config/services.yaml
-    touch config/packages/rompetomp_inertia.yaml
+    # touch config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package-vite.json > package.json
     mkdir assets/js/components
-    touch assets/js/components/Layout.jsx
-    touch assets/js/components/Layout.jsx
+    # touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/Layout2-vite.jsx > assets/js/components/Layout.jsx
     mkdir assets/js/pages
     rm -r stubs
