@@ -57,6 +57,7 @@ function inertia.symfony.react {
     cat ./stubs/stubs/ssr-vite.jsx > assets/js/ssr.jsx
     php -r "file_put_contents('assets/js/app.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.jsx')));"
     php -r "file_put_contents('assets/js/ssr.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/ssr.jsx')));"
+    mkdir src/{Command,Service}
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
