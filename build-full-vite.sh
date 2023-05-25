@@ -63,7 +63,6 @@ function inertia.symfony.react {
     mkdir src/Command
     touch src/Command/StartInertiaSsrCommand.php
     touch src/Command/StopInertiaSsrCommand.php
-    touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
     mkdir src/Service
@@ -76,6 +75,7 @@ function inertia.symfony.react {
     cat ./stubs/stubs/package-vite.json > package.json
     mkdir assets/js/components
     touch assets/js/components/Layout.jsx
+    touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/Layout-vite.jsx > assets/js/components/Layout.jsx
     mkdir assets/js/pages
     touch assets/js/pages/Home.jsx
@@ -84,7 +84,6 @@ function inertia.symfony.react {
     rm -r stubs
     npm install --legacy-peer-deps
     bash scripts/format.sh
-    npm run dev
     composer config --json extra.symfony.allow-contrib false
     git add -A
     git commit -m "Setup Inertia"
@@ -92,7 +91,7 @@ function inertia.symfony.react {
     WHITE='\033[1;37m'
     NC='\033[0m'
 
-    echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $PROJECT_NAME && symfony serve -d && symfony open:local && npm run watch"
+    echo -e "${WHITE}Thank you! We hope you build something incredible. Dive in with:${NC} cd $PROJECT_NAME && symfony serve -d && symfony open:local && npm run dev"
 }
 
 args=("$@")
