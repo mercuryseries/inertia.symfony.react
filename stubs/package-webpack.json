@@ -27,7 +27,7 @@
     "watch": "encore dev --watch",
     "build:client": "encore production --progress",
     "build:server": "encore production --progress --config webpack.ssr.config.js",
-    "clean": "rimraf public/build-ssr/{entrypoints,manifest}.json public/build-ssr/ssr*.css",
+    "clean": "rimraf public/build-ssr/{entrypoints,manifest}.json public/build-ssr/ssr.css",
     "build": "npm run build:client && npm run build:server && npm run clean"
   }
 }
