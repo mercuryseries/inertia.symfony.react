@@ -38,5 +38,6 @@ config.externals = [
     allowlist: [/^@inertiajs/],
   }),
 ];
+config.output.globalObject = "this";
 
 module.exports = config;
