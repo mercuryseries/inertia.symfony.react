@@ -50,19 +50,26 @@ function inertia.symfony.react {
     mkdir assets/img
     echo '' > assets/img/.gitignore
     mkdir assets/js
-    rm -r assets/{app.js}
+    rm -r assets/app.js
     mkdir assets/styles
     mv assets/app.css assets/styles/app.css
     cat ./stubs/stubs/app-vite.jsx > assets/js/app.jsx
     cat ./stubs/stubs/ssr-vite.jsx > assets/js/ssr.jsx
     php -r "file_put_contents('assets/js/app.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/app.jsx')));"
     php -r "file_put_contents('assets/js/ssr.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/ssr.jsx')));"
-    mkdir src/{Command,Service}
+    mkdir src/Command
+    touch src/Command/StartInertiaSsrCommand.php
+    touch src/Command/StopInertiaSsrCommand.php
+    touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
+    mkdir src/Service
+    touch src/Service/BundleDetector.php
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
     cat ./stubs/stubs/services.yaml > config/services.yaml
+    touch config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
+    cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package-vite.json > package.json
     mkdir assets/js/components
     touch assets/js/components/Layout.jsx

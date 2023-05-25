@@ -60,11 +60,17 @@ function inertia.symfony.react {
     php -r "file_put_contents('assets/js/ssr.jsx', str_replace('[TO_REPLACE]', ucwords(str_replace(['-', '_', '.'], ' ', '$PROJECT_NAME')), file_get_contents('assets/js/ssr.jsx')));"
     symfony console make:controller pages --no-template
     cat ./stubs/stubs/PagesController.php > src/Controller/PagesController.php
-    mkdir src/{Command,Service}
+    mkdir src/Command
+    touch src/Command/StartInertiaSsrCommand.php
+    touch src/Command/StopInertiaSsrCommand.php
+    touch assets/js/components/Layout.jsx
     cat ./stubs/stubs/StartInertiaSsrCommand.php > src/Command/StartInertiaSsrCommand.php
     cat ./stubs/stubs/StopInertiaSsrCommand.php > src/Command/StopInertiaSsrCommand.php
+    mkdir src/Service
+    touch src/Service/BundleDetector.php
     cat ./stubs/stubs/BundleDetector.php > src/Service/BundleDetector.php
     cat ./stubs/stubs/services.yaml > config/services.yaml
+    touch config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/rompetomp_inertia.yaml > config/packages/rompetomp_inertia.yaml
     cat ./stubs/stubs/jsconfig.json > jsconfig.json
     cat ./stubs/stubs/package-vite.json > package.json
