@@ -4,8 +4,8 @@
     "dev": "vite",
     "build:client": "vite build",
     "build:server": "vite build --outDir public/build-ssr --ssr assets/js/ssr.jsx",
-    "clean:server": "rimraf public/build-ssr/{entrypoints,manifest}.json",
-    "build": "npm run build:client && npm run build:server && npm run clean:server"
+    "clean": "rimraf public/build-ssr/{entrypoints,manifest}.json",
+    "build": "npm run build:client && npm run build:server && npm run clean"
   },
   "license": "UNLICENSED",
   "devDependencies": {
