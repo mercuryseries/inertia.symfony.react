@@ -1,4 +1,5 @@
 /config/
+/assets/js/lib/translations/
 /public/build/
 /public/build-ssr/
 /public/bundles/
