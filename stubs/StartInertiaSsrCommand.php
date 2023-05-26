@@ -47,7 +47,7 @@ class StartInertiaSsrCommand extends Command
             $io->error(
                 $this->configuredBundle
                     ? 'Inertia SSR bundle not found at the configured path: "'.$this->configuredBundle.'"'
-                    : 'Inertia SSR bundle not found. Set the correct Inertia SSR bundle path in your `app.inertia.ssr.bundle` config parameter.'
+                    : 'Inertia SSR bundle not found. Set the correct Inertia SSR bundle path via the `app.inertia.ssr.bundle` config parameter.'
             );
 
             return Command::FAILURE;
