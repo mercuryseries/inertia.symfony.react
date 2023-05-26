@@ -4,8 +4,7 @@
     "dev": "vite",
     "build:client": "vite build",
     "build:server": "vite build --outDir public/build-ssr --ssr assets/js/ssr.jsx",
-    "clean": "rimraf public/build-ssr/{entrypoints,manifest}.json",
-    "build": "npm run build:client && npm run build:server && npm run clean"
+    "build": "npm run build:client && npm run build:server"
   },
   "license": "UNLICENSED",
   "devDependencies": {
@@ -15,7 +14,6 @@
     "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rimraf": "^5.0.1",
     "vite": "^4.0",
     "vite-plugin-symfony": "^0.7.2",
     "vite-plugin-watch": "^0.1.1"
