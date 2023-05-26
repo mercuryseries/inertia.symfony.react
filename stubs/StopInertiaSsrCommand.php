@@ -26,7 +26,7 @@ class StopInertiaSsrCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $url = str_replace('/render', '', $this->ssrUrl).'/shutdown';
+        $url = str_replace('/render', '/shutdown', $this->ssrUrl);
 
         $ch = curl_init($url);
         curl_exec($ch);
