@@ -48,7 +48,7 @@ Encore.addPlugin(new FosRouting())
   .enableVersioning(Encore.isProduction())
 
   .configureBabel((config) => {
-    config.plugins.push("@babel/plugin-proposal-class-properties");
+    // config.plugins.push('@babel/a-babel-plugin');
 
     if (Encore.isProduction()) {
       config.plugins.push("transform-react-remove-prop-types");
