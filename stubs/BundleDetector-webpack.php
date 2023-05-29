@@ -11,23 +11,23 @@ class BundleDetector
     public function __construct(
         private readonly Filesystem $filesystem,
 
-        #[Autowire('%app.inertia.ssr.bundle%')]
-        private readonly string $configuredBundle,
-
         #[Autowire('%kernel.project_dir%')]
-        private readonly string $basePath
+        private readonly string $basePath,
+
+        #[Autowire('%app.inertia.ssr.bundle%')]
+        private readonly string $configuredBundle = null
     ) {
     }
 
     public function detect(): ?string
     {
-        $bundlePaths = [
+        $bundlePaths = array_filter([
             $this->configuredBundle,
             Path::makeAbsolute('public/build-ssr/ssr.js', $this->basePath),
             Path::makeAbsolute('public/build-ssr/ssr.mjs', $this->basePath),
             Path::makeAbsolute('public/build/ssr.js', $this->basePath),
             Path::makeAbsolute('public/build/ssr.mjs', $this->basePath),
-        ];
+        ]);
 
         foreach ($bundlePaths as $bundlePath) {
             if ($this->filesystem->exists($bundlePath)) {
