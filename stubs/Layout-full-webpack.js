@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
               <Link
                 href={Routing.generate("app_home")}
                 className={component === "Home" ? "active" : ""}
+                aria-current={component === "Home"}
               >
                 Home
               </Link>
@@ -22,6 +23,7 @@ const Layout = ({ children }) => {
               <Link
                 href={Routing.generate("app_about")}
                 className={component === "About" ? "active" : ""}
+                aria-current={component === "About"}
               >
                 About Us
               </Link>
