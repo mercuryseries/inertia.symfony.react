@@ -15,7 +15,7 @@ class BundleDetector
         private readonly string $basePath,
 
         #[Autowire('%app.inertia.ssr.bundle%')]
-        private readonly string $configuredBundle = null
+        private readonly ?string $configuredBundle = null
     ) {
     }
 
