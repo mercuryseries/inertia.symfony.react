@@ -48,11 +48,11 @@ Encore.addPlugin(new FosRouting())
   .enableVersioning(Encore.isProduction())
 
   .configureBabel((config) => {
-    const reactPreset = require.resolve('@babel/preset-react');
+    const reactPreset = require.resolve("@babel/preset-react");
 
     config.presets = [
       ...config.presets.filter((preset) => preset !== reactPreset),
-      [reactPreset, { runtime: 'automatic' }],
+      [reactPreset, { runtime: "automatic" }],
     ];
 
     if (Encore.isProduction()) {

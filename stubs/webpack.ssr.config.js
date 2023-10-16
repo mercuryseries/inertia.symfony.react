@@ -20,11 +20,11 @@ Encore.addPlugin(new FosRouting())
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
   .configureBabel((config) => {
-    const reactPreset = require.resolve('@babel/preset-react');
+    const reactPreset = require.resolve("@babel/preset-react");
 
     config.presets = [
       ...config.presets.filter((preset) => preset !== reactPreset),
-      [reactPreset, { runtime: 'automatic' }],
+      [reactPreset, { runtime: "automatic" }],
     ];
 
     if (Encore.isProduction()) {
