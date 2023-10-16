@@ -48,7 +48,12 @@ Encore.addPlugin(new FosRouting())
   .enableVersioning(Encore.isProduction())
 
   .configureBabel((config) => {
-    // config.plugins.push("@babel/a-babel-plugin");
+    const reactPreset = require.resolve('@babel/preset-react');
+
+    config.presets = [
+      ...config.presets.filter((preset) => preset !== reactPreset),
+      [reactPreset, { runtime: 'automatic' }],
+    ];
 
     if (Encore.isProduction()) {
       config.plugins.push("transform-react-remove-prop-types");
